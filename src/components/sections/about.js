@@ -141,7 +141,7 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
-            <p>Hey! I'm Sam, an aspiring software engineer from Los Angeles, CA.</p>
+            <p>Hey! I'm Sam, a software engineer from Los Angeles, CA.</p>
 
             <p>
               I am an avid lover of tech with a natural curiosity for the underlying technologies
