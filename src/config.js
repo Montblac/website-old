@@ -14,10 +14,6 @@ module.exports = {
       name: 'Instagram',
       url: 'https://www.instagram.com/montblac',
     },
-    //{
-    //  name: 'Steam',
-    //  url: 'https://steamcommunity.com/id/montblac/',
-    //},
   ],
 
   navLinks: [

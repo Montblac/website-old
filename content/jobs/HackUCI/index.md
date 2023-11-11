@@ -1,5 +1,5 @@
 ---
-date: '2018-2-16'
+date: '2018-02-16'
 title: 'Hackathon Volunteer'
 company: 'HackUCI'
 location: 'Irvine, CA'

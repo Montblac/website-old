@@ -49,11 +49,11 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Sam Leyva.</h2>;
-  const three = <h3 className="big-heading">I am a tech enthusiast.</h3>;
+  const three = <h3 className="big-heading">I am a software engineer.</h3>;
   const four = (
     <p>
-      I'm a Computer Science graduate looking to expand my software development skills, work with
-      all sorts of tech, and build some exciting projects.
+      I'm a tech enthusiast looking to work with all sorts of tech, collaborate with brilliant individuals,
+      and build some exciting projects.
     </p>
   );
   const five = (
