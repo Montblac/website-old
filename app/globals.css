@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Font faces ── */
+@font-face { font-family: 'Calibre'; src: url('/fonts/Calibre/Calibre-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Calibre'; src: url('/fonts/Calibre/Calibre-LightItalic.woff2') format('woff2'); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Calibre'; src: url('/fonts/Calibre/Calibre-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Calibre'; src: url('/fonts/Calibre/Calibre-RegularItalic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Calibre'; src: url('/fonts/Calibre/Calibre-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Calibre'; src: url('/fonts/Calibre/Calibre-Semibold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Mono'; src: url('/fonts/SFMono/SFMono-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Mono'; src: url('/fonts/SFMono/SFMono-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Mono'; src: url('/fonts/SFMono/SFMono-Semibold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+
+/* ── Base resets ── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-nord-0 text-nord-5 font-sans;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-nord-3 text-nord-7;
+  }
+
+  a {
+    @apply text-inherit no-underline transition-colors duration-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-nord-7 font-semibold leading-tight;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-nord-1; }
+  ::-webkit-scrollbar-thumb { @apply bg-nord-3 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-nord-4; }
+}
+
+/* ── Component helpers ── */
+@layer components {
+  .numbered-heading {
+    @apply flex items-center text-nord-7 font-semibold whitespace-nowrap;
+    counter-increment: section;
+  }
+  .numbered-heading::before {
+    content: '0' counter(section) '.';
+    @apply font-mono text-nord-10 font-normal mr-2 text-sm;
+  }
+
+  .fancy-link {
+    @apply relative text-nord-7 hover:text-nord-10 transition-colors duration-200;
+  }
+  .fancy-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-nord-10 transition-all duration-200;
+  }
+  .fancy-link:hover::after { @apply w-full; }
+
+  .section-tag {
+    @apply font-mono text-nord-10 text-xs tracking-widest uppercase mb-4 block;
+  }
+}
+
+/* ── Loader hex animation ── */
+#hex-path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+.loader-animate #hex-path {
+  animation: drawStroke 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s forwards;
+}
+.loader-animate #logo-letter {
+  animation: fadeIn 0.7s ease 1.8s forwards;
+}
+#logo-letter { opacity: 0; }
+
+@keyframes drawStroke {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+@keyframes fadeOut {
+  to { opacity: 0; pointer-events: none; }
+}
+.loader-hiding {
+  animation: fadeOut 0.3s ease 0.1s forwards;
+}

@@ -1,11 +1,20 @@
-# Project dependencies
-.cache
-node_modules
-yarn-error.log
-package-lock.json
+# dependencies
+/node_modules
 
-# Build directory
-/public
-.DS_Store
+# next.js
+/.next/
+/out/
 
-.vscode/
+# production
+/build
+
+# env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
